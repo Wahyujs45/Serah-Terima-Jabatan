@@ -3,79 +3,1108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serah Terima Jabatan</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Naskah MC & Doa - Sertijab Kebidanan Magelang 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #00A6A6;
+            --dark-teal: #005b5c;
+            --light-teal: #e6f6f6;
+            --warm-white: #F7F9FA;
+            --text-dark: #2d3748;
+            --text-muted: #718096;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 4px 6px rgba(0, 166, 166, 0.05);
+            --shadow-md: 0 10px 25px rgba(0, 166, 166, 0.1);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--warm-white);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 950px;
+            margin: 40px 20px;
+            animation: slideUpFade 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            background: linear-gradient(135deg, var(--dark-teal) 0%, var(--primary-teal) 100%);
+            color: white;
+            padding: 50px 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png') opacity(0.05);
+            pointer-events: none;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            margin: 15px 0 0 0;
+            font-size: 16px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* Accordion / Dropdown Styling */
+        .accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .accordion-item {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            border-color: var(--light-teal);
+            box-shadow: var(--shadow-md);
+        }
+
+        .accordion-header {
+            width: 100%;
+            background: white;
+            color: var(--dark-teal);
+            padding: 24px 30px;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: left;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .accordion-header:hover {
+            color: var(--primary-teal);
+            background: var(--light-teal);
+        }
+
+        .accordion-header.active {
+            background: var(--primary-teal);
+            color: white;
+        }
+
+        .icon {
+            font-size: 24px;
+            font-weight: 400;
+            transition: transform 0.4s ease;
+        }
+
+        .accordion-header.active .icon {
+            transform: rotate(45deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+            background: white;
+        }
+
+        .accordion-content-inner {
+            padding: 30px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Inner Content Styling */
+        .meta-info {
+            background: var(--warm-white);
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 14px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .meta-info table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .meta-info td {
+            padding: 8px;
+            vertical-align: top;
+        }
+
+        .meta-info td.label {
+            font-weight: 600;
+            width: 160px;
+            color: var(--dark-teal);
+        }
+
+        .time-block {
+            background: var(--light-teal);
+            color: var(--dark-teal);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 13px;
+            display: inline-block;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-top: 25px;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .cue {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: block;
+            font-size: 14px;
+        }
+
+        .speech {
+            margin-bottom: 30px;
+            padding-left: 20px;
+            border-left: 4px solid var(--border-color);
+            color: var(--text-dark);
+        }
+
+        .poem, .pantun {
+            background: #F0FAF5;
+            border-left: 4px solid #27AE60;
+            padding: 18px 24px;
+            margin: 20px 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            color: var(--dark-teal);
+        }
+
+        .pantun {
+            background: #FFF7ED;
+            border-left: 4px solid #F59E0B;
+            color: #9A3412;
+        }
+
+        .poem-line, .pantun-line {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        /* Doa Specific Styling */
+        .doa-content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .doa-content p:last-child {
+            text-align: center;
+            font-weight: 700;
+            color: var(--primary-teal);
+            font-size: 18px;
+            margin-top: 30px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 30px;
+            color: var(--text-muted);
+            font-size: 14px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 25px;
+            width: 100%;
+        }
+
+        /* Keyframes */
+        @keyframes slideUpFade {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .container { margin: 20px 15px; }
+            header h1 { font-size: 22px; }
+            .accordion-header { font-size: 16px; padding: 18px 20px; }
+            .accordion-content-inner { padding: 20px 15px; }
+            .meta-info td.label { width: 100px; }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🎤 Naskah Serah Terima Jabatan</h1>
-            <p class="subtitle">MC dan Doa</p>
-        </header>
 
-        <nav>
-            <button class="nav-btn" onclick="scrollToSection('pembukaan')">Pembukaan</button>
-            <button class="nav-btn" onclick="scrollToSection('naskah')">Naskah MC</button>
-            <button class="nav-btn" onclick="scrollToSection('doa')">Doa</button>
-        </nav>
+<div class="container">
+    <header>
+        <h1>NASKAH MASTER OF CEREMONIES (MC) & DOA</h1>
+        <p>Serah Terima Jabatan Pengelola Program Studi Kebidanan Magelang<br>Poltekkes Kemenkes Semarang Tahun 2026 - 2030</p>
+    </header>
 
-        <main>
-            <!-- Pembukaan -->
-            <section id="pembukaan" class="section">
-                <h2>Pembukaan</h2>
-                <div class="content">
-                    <p>Assalamu'alaikum Warrahmatullahi Wabarakatuh</p>
-                    <p>Puji syukur kami panjatkan kehadirat Allah SWT yang telah memberikan rahmat dan hidayahnya.</p>
-                    <p>Pada kesempatan yang berbahagia ini, kami menghadirkan acara Serah Terima Jabatan...</p>
-                </div>
-            </section>
+    <div class="accordion">
 
-            <!-- Naskah MC -->
-            <section id="naskah" class="section">
-                <h2>Naskah MC</h2>
-                <div class="content">
-                    <div class="scene">
-                        <h3>Pembukaan Acara</h3>
-                        <p><strong>MC:</strong> Assalamu'alaikum Warrahmatullahi Wabarakatuh para hadirin yang berbahagia</p>
-                        <p>Selamat datang di acara Serah Terima Jabatan yang insya Allah akan berlangsung dengan lancar.</p>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* Animasi fade-in untuk seluruh kontainer */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .table-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 166, 166, 0.1);
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .header-title {
+            text-align: center;
+            color: #005b5c;
+            margin-bottom: 25px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        th {
+            background-color: #00A6A6;
+            color: white;
+            padding: 12px;
+            text-align: center;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: left;
+            transition: background-color 0.3s ease; /* Animasi transisi warna */
+        }
+
+        /* Efek hover seperti di video */
+        tr:hover td {
+            background-color: #e6f6f6;
+            cursor: pointer;
+        }
+
+        tr:nth-child(even) { background-color: #F7F9FA; }
+
+        .catatan {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #718096;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    <div class="header-title">
+        <h2>SUSUNAN ACARA</h2>
+        <p>SERAH TERIMA JABATAN PENGELOLA PROGRAM STUDI KEBIDANAN MAGELANG<br>POLTEKKES KEMENKES SEMARANG TAHUN 2026 - 2030</p>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Waktu</th>
+                <th>Kegiatan</th>
+                <th>Keterangan/PIC</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>07.30 – 08.00</td><td>Registrasi dan kedatangan tamu undangan</td><td>Panitia</td></tr>
+            <tr><td>2</td><td>08.00 – 08.10</td><td>Pembukaan oleh Pembawa Acara</td><td>MC (Putra)</td></tr>
+            <tr><td>3</td><td>08.10 – 08.15</td><td>Menyanyikan Lagu Indonesia Raya</td><td>Seluruh Hadirin</td></tr>
+            <tr><td>4</td><td>08.15 – 08.25</td><td>Pembacaan Doa</td><td>Petugas Doa (Effendi)</td></tr>
+            <tr><td>5</td><td>08.25 – 08.40</td><td>Penayangan video kilas balik</td><td>IT</td></tr>
+            <tr><td>6</td><td>08.40 – 09.00</td><td>Sambutan Pengelola Tahun 2023 - 2026</td><td>Pengelola Lama (Bu Arfiana)</td></tr>
+            <tr><td>7</td><td>09.00 – 09.20</td><td>Sambutan Pengelola Tahun 2026 - 2030</td><td>Pengelola Baru (Bu Esti)</td></tr>
+            <tr><td>8</td><td>09.20 – 09.30</td><td>Simbolis Serah Terima Jabatan</td><td>Tim</td></tr>
+            <tr><td>9</td><td>09.30 – 09.40</td><td>Pembacaan surat tugas : SOTK Tahun 2026 - 2030</td><td>Bu Siti Chunaeni</td></tr>
+            <tr><td>10</td><td>09.40 – 09.50</td><td>Penutup</td><td>MC</td></tr>
+            <tr><td>11</td><td>09.50 – 10.30</td><td>Ramah Tamah</td><td>Seluruh Hadirin</td></tr>
+        </tbody>
+    </table>
+
+    <div class="catatan">
+        <strong>Catatan:</strong><br>
+        1. Susunan acara dapat disesuaikan dengan kondisi dan kebutuhan di lapangan.<br>
+        2. Peserta diharapkan hadir 30 menit sebelum acara dimulai.
+    </div>
+</div>
+
+</body>
+</html>
+
+        <div class="accordion-item">
+            <button class="accordion-header">
+                1. Versi 1: Profesional, Sederhana & Menarik <span class="icon">+</span>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <div class="meta-info">
+                        <table>
+                            <tr><td class="label">Acara</td><td>Serah Terima Jabatan Pengelola Program Studi Kebidanan Magelang Poltekkes Kemenkes Semarang Tahun 2026 - 2030</td></tr>
+                            <tr><td class="label">Tanggal</td><td>Senin, 20 Juli 2026</td></tr>
+                            <tr><td class="label">Waktu</td><td>08.00 WIB – Selesai</td></tr>
+                            <tr><td class="label">Tempat</td><td>Ruang Pertemuan</td></tr>
+                            <tr><td class="label">MC</td><td>Putra</td></tr>
+                        </table>
                     </div>
 
-                    <div class="scene">
-                        <h3>Penghormatan</h3>
-                        <p><strong>MC:</strong> Mari kita memberikan penghormatan kepada pejabat/pemimpin yang hadir</p>
-                        <p>Penghormatan dimulai dengan tepuk tangan meriah untuk semua yang telah berkontribusi.</p>
+                    <div class="time-block">[08.00 – 08.10] PEMBUKAAN OLEH MC</div>
+                    <span class="cue">*(MC berdiri di podium, tersenyum ramah kepada hadirin)*</span>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Bunga merekah di taman asri,<br>
+                        Harum semerbak menyejukkan hati.<br>
+                        Selamat pagi bapak ibu yang hadir di sini,<br>
+                        Mari kita mulai acara pagi ini dengan rida Ilahi.<br><br>
+                        <i>Assalamu’alaikum Warahmatullahi Wabarakatuh,</i><br>
+                        Selamat pagi, dan salam sejahtera bagi kita semua.<br><br>
+                        Yang kami hormati, Direktur Poltekkes Kemenkes Semarang,<br>
+                        Yang kami hormati, Jajaran Pimpinan dan Dosen Program Studi Kebidanan Magelang,<br>
+                        Serta Bapak/Ibu hadirin tamu undangan yang berbahagia.<br><br>
+                        Puji syukur senantiasa kita panjatkan ke hadirat Tuhan Yang Maha Esa, karena atas rahmat dan karunia-Nya, pada hari ini, <b>Senin, 20 Juli 2026</b>, kita dapat berkumpul di Ruang Pertemuan ini dalam acara <b>Serah Terima Jabatan Pengelola Program Studi Kebidanan Magelang Poltekkes Kemenkes Semarang Tahun 2026 - 2030</b>.<br><br>
+                        Perkenalkan, saya Putra, yang akan memandu jalannya acara pada pagi hari ini.<br><br>
+                        Sebelum kita memulai acara, izinkan saya membacakan sepenggal puisi untuk memaknai hari yang bersejarah ini:
+                        <div class="poem">
+                            <span class="poem-line">Fajar menyingsing di ufuk timur,</span>
+                            <span class="poem-line">Membawa asa di hari yang baru.</span>
+                            <span class="poem-line">Untuk dedikasi yang telah terukir luhur,</span>
+                            <span class="poem-line">Dan untuk harapan baru yang kini berpadu.</span>
+                            <span class="poem-line">Satu langkah usai, langkah lain menanti,</span>
+                            <span class="poem-line">Mengabdi untuk negeri, sepenuh hati.</span>
+                        </div>
                     </div>
 
-                    <div class="scene">
-                        <h3>Penutupan</h3>
-                        <p><strong>MC:</strong> Terima kasih atas perhatian dan kehadirannya di acara ini.</p>
-                        <p>Semoga semua yang terlibat dalam acara ini mendapatkan berkah dari Allah SWT.</p>
+                    <div class="time-block">[08.10 – 08.15] MENYANYIKAN LAGU INDONESIA RAYA</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Hadirin yang kami hormati, acara selanjutnya adalah menyanyikan lagu kebangsaan Indonesia Raya. Hadirin dimohon untuk berdiri."<br>
+                        <span class="cue">*(Jeda saat lagu dinyanyikan)*</span>
+                        "Hadirin disilakan duduk kembali."
+                    </div>
+
+                    <div class="time-block">[08.15 – 08.25] PEMBACAAN DOA</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Agar acara pada pagi hari ini berjalan dengan lancar dan membawa keberkahan bagi kita semua, marilah kita menundukkan kepala sejenak untuk berdoa. Pembacaan doa akan dipimpin oleh <b>Bapak Effendi</b>. Kepada Bapak Effendi, kami persilakan."<br>
+                        <span class="cue">*(Jeda untuk doa)*</span>
+                        "Terima kasih kepada Bapak Effendi."
+                    </div>
+
+                    <div class="time-block">[08.25 – 08.40] PENAYANGAN VIDEO KILAS BALIK</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Bapak dan Ibu yang berbahagia, setiap perjalanan pasti meninggalkan jejak kenangan dan prestasi. Mari kita saksikan bersama <b>Penayangan Video Kilas Balik</b> perjalanan Program Studi Kebidanan Magelang."<br>
+                        <span class="cue">*(Jeda penayangan video)*</span>
+                        "Sungguh perjalanan yang luar biasa dan penuh makna."
+                    </div>
+
+                    <div class="time-block">[08.40 – 09.00] SAMBUTAN PENGELOLA TAHUN 2023 - 2026</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Acara selanjutnya adalah sambutan dari Pengelola Program Studi Kebidanan Magelang periode tahun 2023 hingga 2026. Kepada yang terhormat, <b>Ibu Arfiana</b>, kami persilakan."<br>
+                        <span class="cue">*(Jeda sambutan)*</span>
+                        "Terima kasih, Ibu Arfiana, atas sambutan dan dedikasi luar biasa yang telah diberikan selama ini."
+                    </div>
+
+                    <div class="time-block">[09.00 – 09.20] SAMBUTAN PENGELOLA TAHUN 2026 – 2030</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Selanjutnya, mari kita dengarkan bersama sambutan dari Pengelola Program Studi Kebidanan Magelang yang baru untuk periode tahun 2026 hingga 2030. Kepada yang terhormat, <b>Ibu Esti</b>, kami persilakan."<br>
+                        <span class="cue">*(Jeda sambutan)*</span>
+                        "Terima kasih, Ibu Esti. Selamat mengemban amanah yang baru."
+                    </div>
+
+                    <span class="cue">*(MC memberikan pantun komedi berbahasa Jawa yang relevan dengan tahun 2026 setelah sesi sambutan)*</span>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Bapak Ibu, sebelum kita masuk ke acara inti, izinkan saya membawakan satu pantun ala orang Jawa zaman <i>now</i> di tahun 2026 ini, biar suasana makin hangat dan <i>sumringah</i>!
+                        <div class="pantun">
+                            <span class="pantun-line">Tuku sego megono nang warung Mbah Kliwon,</span>
+                            <span class="pantun-line">Numpak ojol lha kok blablasen tekan njaba kutha.</span>
+                            <span class="pantun-line">Kagem Bu Arfiana, matur nuwun sampun move-on,</span>
+                            <span class="pantun-line">Kagem Bu Esti, monggo digas damel prodi makin jaya!</span>
+                        </div>
+                        <span class="cue">*(MC tersenyum/tertawa kecil menunggu respon audiens)*</span>
+                        "Beri tepuk tangan yang meriah untuk Ibu Arfiana dan Ibu Esti!"
+                    </div>
+
+                    <div class="time-block">[09.20 – 09.30] SIMBOLIS SERAH TERIMA JABATAN</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Hadirin yang kami hormati, kini tibalah kita pada acara inti, yaitu <b>Simbolis Serah Terima Jabatan</b>. Kami mengundang Ibu Arfiana dan Ibu Esti untuk mengambil tempat di depan. Kepada Tim yang bertugas, disilakan."<br>
+                        <span class="cue">*(Prosesi serah terima, foto bersama)*</span>
+                        "Terima kasih, Ibu Arfiana dan Ibu Esti disilakan untuk kembali ke tempat duduk."
+                    </div>
+
+                    <div class="time-block">[09.30 – 09.40] PEMBACAAN SURAT TUGAS</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Melangkah ke acara berikutnya, yaitu Pembacaan Surat Tugas: SOTK Tahun 2026 - 2030. Acara ini akan dipandu oleh <b>Ibu Siti Chunaeni</b>. Kepada Ibu Siti Chunaeni, kami persilakan."<br>
+                        <span class="cue">*(Jeda pembacaan surat tugas)*</span>
+                        "Terima kasih kami ucapkan kepada Ibu Siti Chunaeni."
+                    </div>
+
+                    <div class="time-block">[09.40 – 09.50] PENUTUP</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Bapak, Ibu, dan hadirin sekalian yang kami hormati. Rangkaian acara Serah Terima Jabatan Pengelola Program Studi Kebidanan Magelang Poltekkes Kemenkes Semarang Tahun 2026 - 2030 telah selesai kita lalui bersama.<br><br>
+                        Saya, Putra, mewakili seluruh panitia yang bertugas, mengucapkan terima kasih yang sebesar-besarnya atas kehadiran dan partisipasi Bapak/Ibu sekalian. Kami juga memohon maaf apabila terdapat kekurangan selama memandu acara ini.<br><br>
+                        Sebagai penutup, ada pepatah mengatakan, <i>'Patah tumbuh hilang berganti'</i>. Pemimpin boleh berganti, namun semangat untuk memajukan pendidikan kesehatan di Indonesia harus terus berkobar.<br><br>
+                        <i>Wabillahi taufiq wal hidayah,</i><br>
+                        <i>Wassalamu’alaikum Warahmatullahi Wabarakatuh.</i>"
+                    </div>
+
+                    <div class="time-block">[09.50 - 10.30 selesai] RAMAH TAMAH</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Hadirin sekalian, acara belum sepenuhnya berakhir. Sebagai wujud silaturahmi antara pengelola lama, pengelola baru, dan seluruh civitas akademika, kami mengundang Bapak/Ibu sekalian untuk menikmati hidangan yang telah disediakan dalam acara <b>Ramah Tamah</b>. Selamat menikmati hidangan dan selamat bercengkerama."
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
 
-            <!-- Doa -->
-            <section id="doa" class="section">
-                <h2>Doa Penutup</h2>
-                <div class="content">
-                    <p class="doa-text">
-                        Allahumma sholli wa sallim ala Sayyidina Muhammad<br>
-                        Wa 'ala ali Sayyidina Muhammad<br>
-                        <br>
-                        Wa amin ya rabbana ahsinal niyah wa tathabbat aqdam yana<br>
-                        Wa ihdina sirootal mustaqim<br>
-                        <br>
-                        Allahu a'lam bisshawab
-                    </p>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                2. Versi 2: Nuansa Segar & Energik <span class="icon">+</span>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <div class="meta-info">
+                        <table>
+                            <tr><td class="label">Agenda Acara</td><td>Serah Terima Jabatan Pengelola Program Studi Kebidanan Magelang Poltekkes Kemenkes Semarang Tahun 2026 - 2030</td></tr>
+                            <tr><td class="label">Waktu</td><td>Senin, 20 Juli 2026 | 08.00 WIB – Selesai</td></tr>
+                            <tr><td class="label">Lokasi</td><td>Ruang Pertemuan</td></tr>
+                            <tr><td class="label">MC</td><td>Putra</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="time-block">[08.00 – 08.10] PEMBUKAAN OLEH MC</div>
+                    <span class="cue">*(MC berdiri tegap di podium, menyapu pandangan ke seluruh ruangan dengan senyum cerah)*</span>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Pagi cerah menyapa Kota Magelang,<br>
+                        Burung berkicau riang di dahan kayu.<br>
+                        Selamat datang tamu yang gemilang,<br>
+                        Mari kita sambut pemimpin yang baru.<br><br>
+                        <i>Assalamu’alaikum Warahmatullahi Wabarakatuh,</i><br>
+                        Selamat pagi, Shalom, Om Swastiastu, Namo Buddhaya, Salam Kebajikan.<br>
+                        Salam sehat dan sejahtera untuk kita semua.<br><br>
+                        Yang terhormat, Direktur Poltekkes Kemenkes Semarang,<br>
+                        Yang kami hormati, Jajaran Pimpinan, Para Dosen, serta seluruh civitas akademika Program Studi Kebidanan Magelang,<br>
+                        Dan yang tak lupa kami banggakan, Bapak/Ibu tamu undangan yang telah hadir pada pagi hari ini.<br><br>
+                        Alhamdulillah, puji syukur kita haturkan ke hadirat Allah SWT, Tuhan Yang Maha Esa. Atas karunia-Nya, pada hari yang istimewa ini, <b>Senin, 20 Juli 2026</b>, kita dapat bersua di Ruang Pertemuan ini untuk melaksanakan agenda <b>Serah Terima Jabatan Pengelola Program Studi Kebidanan Magelang Poltekkes Kemenkes Semarang Tahun 2026 - 2030</b>.<br><br>
+                        Bersama saya, Putra, yang akan memandu jalannya acara bersejarah ini dari awal hingga usai nanti."
+                    </div>
+
+                    <div class="time-block">[08.10 – 08.15] MENYANYIKAN LAGU INDONESIA RAYA</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Sebagai wujud cinta tanah air, marilah kita menyanyikan lagu kebangsaan Indonesia Raya. Hadirin kami mohon untuk berdiri."<br>
+                        <span class="cue">*(Lagu diputar)*</span>
+                        "Hadirin, disilakan duduk kembali."
+                    </div>
+
+                    <div class="time-block">[08.15 – 08.25] PEMBACAAN DOA</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Bapak dan Ibu yang kami hormati, agar setiap niat baik dan langkah kita hari ini dicatat sebagai amal ibadah, marilah kita bermunajat sejenak. Pembacaan doa akan dipimpin oleh <b>Bapak Effendi</b>. Kepada Bapak Effendi, tempat dan waktu kami persilakan."<br>
+                        <span class="cue">*(Prosesi doa)*</span>
+                        "Amin, amin, ya Rabbal alamin. Terima kasih kepada Bapak Effendi."
+                    </div>
+
+                    <div class="time-block">[08.25 – 08.40] PENAYANGAN VIDEO KILAS BALIK</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Tiga tahun bukanlah waktu yang singkat. Ada banyak keringat, dedikasi, dan pencapaian yang telah diukir. Hadirin sekalian, mari kita bernostalgia sejenak melalui <b>Penayangan Video Kilas Balik</b> Program Studi Kebidanan Magelang."<br>
+                        <span class="cue">*(Video diputar)*</span>
+                        "Sebuah perjalanan yang pastinya akan selalu menjadi memori manis bagi kita semua."
+                    </div>
+
+                    <div class="time-block">[08.40 – 09.00] SAMBUTAN PENGELOLA TAHUN 2023 - 2026</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Selanjutnya, mari kita simak bersama sambutan dari sosok hebat yang telah menakhodai prodi ini. Kepada Pengelola Program Studi Kebidanan Magelang Tahun 2023 - 2026, <b>Ibu Arfiana</b>, disilakan."<br>
+                        <span class="cue">*(Sambutan Ibu Arfiana)*</span>
+                        "Terima kasih yang tak terhingga kepada Ibu Arfiana. Dedikasi Ibu akan selalu menjadi inspirasi bagi kami."
+                    </div>
+
+                    <div class="time-block">[09.00 – 09.20] SAMBUTAN PENGELOLA TAHUN 2026 – 2030</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Tongkat estafet kini telah bersiap untuk diserahkan. Acara berikutnya adalah sambutan dari Pengelola Program Studi Kebidanan Magelang yang baru untuk Tahun 2026 – 2030. Kepada yang terhormat, <b>Ibu Esti</b>, kami persilakan."<br>
+                        <span class="cue">*(Sambutan Ibu Esti)*</span>
+                        "Terima kasih, Ibu Esti. Kami siap melangkah bersama di bawah arahan Ibu."
+                    </div>
+
+                    <span class="cue">*(MC maju sedikit, memberikan gestur santai untuk menyampaikan pantun)*</span>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Bapak, Ibu, sebelum kita ke acara puncak, karena kita hidup di era yang serba cepat tahun 2026 ini, saya punya satu pantun khusus untuk Ibu Arfiana dan Ibu Esti. <i>Nyuwun sewu</i>, ini pantunnya pakai bahasa kebanggaan kita, bahasa Jawa:
+                        <div class="pantun">
+                            <span class="pantun-line">Tuku seblak nganggo bumbu mercon,</span>
+                            <span class="pantun-line">Mangan sate ngombe es teh tawar.</span>
+                            <span class="pantun-line">Kagem Bu Arfiana, sugeng move-on,</span>
+                            <span class="pantun-line">Kagem Bu Esti, monggo sat-set digas ben prodi tambah tenar!</span>
+                        </div>
+                        "Beri tepuk tangan yang paling meriah untuk kedua srikandi hebat kita hari ini!"
+                    </div>
+
+                    <div class="time-block">[09.20 – 09.30] SIMBOLIS SERAH TERIMA JABATAN</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Kini kita tiba di acara inti yang dinantikan, yakni prosesi <b>Simbolis Serah Terima Jabatan</b>. Kepada Ibu Arfiana dan Ibu Esti, kami mohon perkenannya untuk maju ke depan. Kepada Tim yang bertugas dipersilakan untuk mendampingi."<br>
+                        <span class="cue">*(Prosesi tanda tangan, penyerahan berkas, dan sesi dokumentasi)*</span>
+                        "Terima kasih. Kepada Ibu Arfiana dan Ibu Esti diperkenankan kembali ke tempat duduk."
+                    </div>
+
+                    <div class="time-block">[09.30 – 09.40] PEMBACAAN SURAT TUGAS</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Agenda berikutnya adalah Pembacaan Surat Tugas: SOTK Tahun 2026 - 2030. Sesi ini akan dibawakan oleh <b>Ibu Siti Chunaeni</b>. Kepada Ibu Siti Chunaeni, disilakan."<br>
+                        <span class="cue">*(Pembacaan surat tugas)*</span>
+                        "Terima kasih kepada Ibu Siti Chunaeni atas pembacaannya."
+                    </div>
+
+                    <div class="time-block">[09.40 – 09.50] PENUTUP</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Hadirin yang berbahagia, alhamdulillah, seluruh rangkaian acara Serah Terima Jabatan Pengelola Program Studi Kebidanan Magelang Tahun 2026 - 2030 telah berjalan dengan lancar dan khidmat.<br><br>
+                        Saya, Putra, mewakili panitia penyelenggara, memohon maaf yang sebesar-besarnya apabila ada tutur kata maupun tindakan yang kurang berkenan di hati Bapak/Ibu sekalian. Akhir kata, mari kita satukan tekad untuk terus memajukan pendidikan kebidanan di Indonesia.<br><br>
+                        <i>Wabillahi taufiq wal hidayah,</i><br>
+                        <i>Wassalamu’alaikum Warahmatullahi Wabarakatuh.</i>"
+                    </div>
+
+                    <div class="time-block">[09.50 - 10.30 Selesai] RAMAH TAMAH</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Sebagai acara penutup, kami mengundang seluruh hadirin, baik pengelola lama, pengelola baru, maupun seluruh civitas akademika untuk bergabung dalam acara <b>Ramah Tamah</b>. Acara ini merupakan wujud silaturahmi kita bersama. Silakan menikmati hidangan yang telah kami sediakan di area belakang. Selamat pagi dan selamat bersilaturahmi!"
+                    </div>
                 </div>
-            </section>
-        </main>
+            </div>
+        </div>
 
-        <footer>
-            <p>&copy; 2024 Serah Terima Jabatan | <a href="https://github.com/Wahyujs45/Serah-Terima-Jabatan" target="_blank">GitHub Repo</a></p>
-        </footer>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                3. Versi 3: Elegan & Interaktif <span class="icon">+</span>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <div class="meta-info">
+                        <table>
+                            <tr><td class="label">Acara</td><td>Serah Terima Jabatan Pengelola Program Studi Kebidanan Magelang Poltekkes Kemenkes Semarang Tahun 2026 - 2030</td></tr>
+                            <tr><td class="label">Hari, Tanggal</td><td>Senin, 20 Juli 2026</td></tr>
+                            <tr><td class="label">Waktu</td><td>08.00 WIB – Selesai</td></tr>
+                            <tr><td class="label">Tempat</td><td>Ruang Pertemuan</td></tr>
+                            <tr><td class="label">MC</td><td>Putra</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="time-block">[08.00 – 08.10] PEMBUKAAN OLEH PEMBAWA ACARA</div>
+                    <span class="cue">*(MC maju ke tengah panggung, menyapa hadirin dengan senyum wibawa dan suara yang mantap)*</span>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Sebelum merangkai kata pada pagi yang penuh makna ini, izinkan saya membawakan bait-bait puisi untuk mengawali langkah kita:
+                        <div class="poem">
+                            <span class="poem-line">Menyemai bakti di tanah kebidanan,</span>
+                            <span class="poem-line">Merawat asa, melahirkan masa depan.</span>
+                            <span class="poem-line">Hari ini layar kembali dibentangkan,</span>
+                            <span class="poem-line">Untuk nahkoda baru pembawa harapan.</span>
+                            <span class="poem-line">Terima kasih untuk jejak yang takkan lekang,</span>
+                            <span class="poem-line">Selamat datang di babak baru yang kian cemerlang.</span>
+                        </div>
+                        <i>Assalamu’alaikum Warahmatullahi Wabarakatuh,</i><br>
+                        Selamat pagi dan salam sejahtera bagi kita semua.<br><br>
+                        Yang teramat kami hormati, Direktur Poltekkes Kemenkes Semarang,<br>
+                        Yang kami hormati, Jajaran Pimpinan, segenap Dosen, dan staf Program Studi Kebidanan Magelang,<br>
+                        Serta Bapak/Ibu tamu undangan yang sangat kami banggakan.<br><br>
+                        Segala puji dan syukur senantiasa kita panjatkan ke hadirat Tuhan Yang Maha Esa. Berkat rahmat-Nya, pada hari yang cerah ini, <b>Senin, 20 Juli 2026</b>, kita dipertemukan di Ruang Pertemuan ini untuk menghadiri acara <b>Serah Terima Jabatan Pengelola Program Studi Kebidanan Magelang Poltekkes Kemenkes Semarang Tahun 2026 - 2030</b>.<br><br>
+                        Perkenalkan, saya Putra, yang akan bertugas memandu jalannya acara pada pagi hari yang istimewa ini."
+                    </div>
+
+                    <div class="time-block">[08.10 – 08.15] MENYANYIKAN LAGU INDONESIA RAYA</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Hadirin yang kami hormati, mengawali rangkaian acara, marilah kita bersama-sama menyanyikan lagu kebangsaan Indonesia Raya. Hadirin dimohon untuk berdiri."<br>
+                        <span class="cue">*(Lagu Indonesia Raya dikumandangkan)*</span>
+                        "Hadirin, disilakan duduk kembali."
+                    </div>
+
+                    <div class="time-block">[08.15 – 08.25] PEMBACAAN DOA</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Agar niat baik kita hari ini senantiasa diiringi oleh kelancaran dan rida dari Tuhan Yang Maha Kuasa, marilah kita menundukkan kepala sejenak untuk berdoa. Pembacaan doa akan dipimpin oleh <b>Bapak Effendi</b>. Kepada Bapak Effendi, disilakan."<br>
+                        <span class="cue">*(Doa berlangsung)*</span>
+                        "Terima kasih kepada Bapak Effendi. Semoga doa yang kita panjatkan bersama dijabah oleh Tuhan Yang Maha Esa."
+                    </div>
+
+                    <div class="time-block">[08.25 – 08.40] PENAYANGAN VIDEO KILAS BALIK</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Bapak dan Ibu sekalian, sebuah pencapaian besar tidak pernah lepas dari proses yang panjang. Sebagai bentuk apresiasi atas dedikasi dan kerja keras selama tiga tahun terakhir, marilah kita saksikan bersama <b>Penayangan Video Kilas Balik</b> Program Studi Kebidanan Magelang."<br>
+                        <span class="cue">*(Penayangan video oleh tim IT)*</span>
+                        "Luar biasa sekali. Sebuah rekam jejak yang patut kita apresiasi dengan tepuk tangan yang meriah!"
+                    </div>
+
+                    <div class="time-block">[08.40 – 09.00] SAMBUTAN PENGELOLA TAHUN 2023 - 2026</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Beranjak ke acara selanjutnya, kita akan mendengarkan sambutan dari sosok inspiratif yang telah memimpin prodi ini dengan luar biasa. Kepada Pengelola Lama Tahun 2023 - 2026, yang terhormat <b>Ibu Arfiana</b>, kami persilakan."<br>
+                        <span class="cue">*(Sambutan Ibu Arfiana)*</span>
+                        "Terima kasih, Ibu Arfiana. Kinerja dan dedikasi Ibu akan selalu terukir indah di hati keluarga besar prodi kebidanan."
+                    </div>
+
+                    <div class="time-block">[09.00 – 09.20] SAMBUTAN PENGELOLA TAHUN 2026 – 2030</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Hadirin, kini saatnya kita menyambut energi baru yang akan membawa prodi ini terbang lebih tinggi lagi. Mari kita dengarkan sambutan dari Pengelola Baru Tahun 2026 – 2030. Kepada yang terhormat, <b>Ibu Esti</b>, disilakan."<br>
+                        <span class="cue">*(Sambutan Ibu Esti)*</span>
+                        "Terima kasih, Ibu Esti. Kami semua siap mendukung dan melangkah bersama Ibu di periode yang baru ini."
+                    </div>
+
+                    <span class="cue">*(MC mengambil jeda sejenak, tersenyum lebar ke arah audiens)*</span>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Bapak Ibu, sebelum kita bergeser ke acara inti, rasanya kurang afdal kalau saya tidak memberikan pantun. Apalagi sekarang sudah tahun 2026, zamannya serba digital, tapi bahasa Jowo tetap di hati!
+                        <div class="pantun">
+                            <span class="pantun-line">Numpak skuter listrik mubeng alun-alun magelang,</span>
+                            <span class="pantun-line">Mampir warung tuku wedang ronde karo sego goreng.</span>
+                            <span class="pantun-line">Kagem Bu Arfiana, matur nuwun karyane sing tansah gemilang,</span>
+                            <span class="pantun-line">Kagem Bu Esti, monggo sat-set digas ben akreditasine makin mentereng!</span>
+                        </div>
+                        <span class="cue">*(Menunggu audiens tertawa/tepuk tangan)*</span>
+                        "Sekali lagi, beri tepuk tangan yang meriah untuk Ibu Arfiana dan Ibu Esti!"
+                    </div>
+
+                    <div class="time-block">[09.20 – 09.30] SIMBOLIS SERAH TERIMA JABATAN</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Hadirin yang berbahagia, tibalah kita pada puncak acara pagi ini, yaitu <b>Simbolis Serah Terima Jabatan</b>. Kepada Ibu Arfiana dan Ibu Esti, kami silakan untuk mengambil tempat di depan. Kepada Tim yang bertugas, mohon perkenannya untuk memandu prosesi."<br>
+                        <span class="cue">*(Prosesi serah terima dan dokumentasi)*</span>
+                        "Prosesi serah terima telah selesai dilaksanakan. Kepada Ibu Arfiana dan Ibu Esti, disilakan untuk kembali ke tempat duduk."
+                    </div>
+
+                    <div class="time-block">[09.30 – 09.40] PEMBACAAN SURAT TUGAS</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Acara selanjutnya adalah Pembacaan Surat Tugas: SOTK Tahun 2026 - 2030, yang akan dibacakan oleh <b>Ibu Siti Chunaeni</b>. Kepada Ibu Siti Chunaeni, tempat dan waktu kami persilakan."<br>
+                        <span class="cue">*(Pembacaan surat tugas)*</span>
+                        "Terima kasih kepada Ibu Siti Chunaeni yang telah membacakan surat tugas."
+                    </div>
+
+                    <div class="time-block">[09.40 – 09.50] PENUTUP</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Bapak, Ibu, and hadirin yang kami hormati. Dengan selesainya pembacaan surat tugas tadi, maka berakhirlah seluruh rangkaian acara inti kita pada hari ini.<br><br>
+                        Saya, Putra, mewakili segenap panitia yang bertugas, mengucapkan terima kasih atas kehadiran dan antusiasme Bapak/Ibu sekalian. Kami juga memohon maaf yang sedalam-dalamnya apabila ada tutur kata maupun pelayanan yang kurang berkenan.<br><br>
+                        Semoga pergantian tongkat estafet ini menjadi momentum bagi Program Studi Kebidanan Magelang untuk semakin maju, unggul, dan berprestasi.<br><br>
+                        <i>Akhirul kalam, wabillahi taufiq wal hidayah,</i><br>
+                        <i>Wassalamu’alaikum Warahmatullahi Wabarakatuh.</i>"
+                    </div>
+
+                    <div class="time-block">[09.50 - 10.30] RAMAH TAMAH</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Hadirin sekalian, mohon jangan beranjak dulu. Sebagai penutup yang manis dan untuk mempererat tali silaturahmi antara pengelola lama, pengelola baru, serta seluruh civitas akademika, kami mengundang Bapak/Ibu sekalian untuk menikmati hidangan yang telah kami sediakan dalam acara <b>Ramah Tamah</b>. Selamat menikmati hidangan dan selamat bercengkerama. Sampai jumpa di lain kesempatan!"
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header">
+                4. Versi 4: Eksklusif, Hangat & Taktis <span class="icon">+</span>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <div class="meta-info">
+                        <table>
+                            <tr><td class="label">Agenda Acara</td><td>Serah Terima Jabatan Pengelola Program Studi Kebidanan Magelang Poltekkes Kemenkes Semarang Periode 2026 - 2030</td></tr>
+                            <tr><td class="label">Hari, Tanggal</td><td>Senin, 20 Juli 2026</td></tr>
+                            <tr><td class="label">Waktu</td><td>08.00 WIB – Selesai</td></tr>
+                            <tr><td class="label">Tempat</td><td>Ruang Pertemuan</td></tr>
+                            <tr><td class="label">MC</td><td>Putra</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="time-block">[08.00 – 08.10] PEMBUKAAN OLEH PEMBAWA ACARA</div>
+                    <span class="cue">*(MC berdiri tegap di podium dengan tatapan ramah, tersenyum tulus, dan menyapa seluruh hadirin untuk membangun atmosfer yang khidmat namun nyaman)*</span>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Selamat pagi dan selamat datang kami ucapkan kepada seluruh hadirin. Sebelum kita melangkah lebih jauh untuk memulai momen yang penuh nilai sejarah ini, izinkan saya mempersembahkan untaian puisi sebagai pembuka gerbang acara kita:
+                        <div class="poem">
+                            <span class="poem-line">Jejak-jejak pengabdian terukir suci,</span>
+                            <span class="poem-line">Di sela waktu yang terus bergulir tanpa henti.</span>
+                            <span class="poem-line">Tangan-tangan ikhlas merawat generasi,</span>
+                            <span class="poem-line">Melahirkan bidan-bidan tangguh bagi ibu pertiwi.</span>
+                            <span class="poem-line">Hari ini, selembar kisah indah kita syukuri,</span>
+                            <span class="poem-line">Sembari menyambut fajar baru yang siap menginspirasi.</span>
+                        </div>
+                        <i>Assalamu’alaikum Warahmatullahi Wabarakatuh,</i><br>
+                        Selamat pagi, salam sejahtera, dan salam sehat bagi kita semua.<br><br>
+                        Yang kami hormati, Direktur Poltekkes Kemenkes Semarang,<br>
+                        Yang kami hormati, Jajaran Pimpinan, segenap Dosen, serta Civitas Akademika Program Studi Kebidanan Magelang,<br>
+                        Serta yang kami hormati, Bapak dan Ibu tamu undangan yang berbahagia.<br><br>
+                        Puji dan syukur senantiasa kita panjatkan ke hadirat Tuhan Yang Maha Esa, karena atas limpahan rahmat dan hidayah-Nya, kita dapat dipertemukan di Ruang Pertemuan ini pada hari <b>Senin, 20 Juli 2026</b>, untuk menghadiri agenda penting: <b>Serah Terima Jabatan Pengelola Program Studi Kebidanan Magelang Poltekkes Kemenkes Semarang Tahun 2026 - 2030</b>.<br><br>
+                        Perkenalkan, saya Putra, yang akan bertindak sebagai <i>Master of Ceremony</i> dan memandu jalannya seluruh rangkaian acara hingga akhir nanti."
+                    </div>
+
+                    <div class="time-block">[08.10 – 08.15] MENYANYIKAN LAGU INDONESIA RAYA</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Memasuki agenda berikutnya, marilah kita memperkuat rasa nasionalisme dan cinta tanah air dengan menyanyikan lagu kebangsaan Indonesia Raya secara bersama-sama. Kepada seluruh hadirin, dimohon untuk berdiri."<br>
+                        <span class="cue">*(Lagu Indonesia Raya dikumandangkan)*</span>
+                        "Hadirin disilakan untuk duduk kembali."
+                    </div>
+
+                    <div class="time-block">[08.15 – 08.25] PEMBACAAN DOA</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Agar seluruh rangkaian acara kita hari ini senantiasa diliputi keberkahan, kelancaran, dan membawa kebaikan bagi institusi kita, marilah kita menundukkan kepala sejenak untuk berdoa. Pembacaan doa akan dipimpin oleh <b>Bapak Effendi</b>. Kepada Bapak Effendi, kami persilakan."<br>
+                        <span class="cue">*(Prosesi pembacaan doa)*</span>
+                        "Terima kasih kami sampaikan kepada Bapak Effendi. Semoga doa-doa kita dikabulkan oleh Tuhan Yang Maha Kuasa."
+                    </div>
+
+                    <div class="time-block">[08.25 – 08.40] PENAYANGAN VIDEO KILAS BALIK</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Bapak dan Ibu yang berbahagia, setiap masa kepemimpinan membawa cerita, tantangan, dan prestasinya tersendiri. Mari kita luangkan waktu sejenak untuk menyaksikan lembar demi lembar dedikasi yang telah dilalui dalam <b>Penayangan Video Kilas Balik</b> Program Studi Kebidanan Magelang. Selamat menyaksikan."<br>
+                        <span class="cue">*(Video diputar oleh tim IT)*</span>
+                        "Sebuah tayangan yang sangat menyentuh dan membanggakan. Mari kita berikan tepuk tangan yang meriah atas kerja keras dan dedikasi yang telah diukir!"
+                    </div>
+
+                    <div class="time-block">[08.40 – 09.00] SAMBUTAN PENGELOLA TAHUN 2023 - 2026</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Kini kita akan mendengarkan ungkapan hati dan sambutan dari sosok yang telah berjuang memimpin prodi ini pada periode sebelumnya. Kepada Pengelola Periode Tahun 2023 - 2026, yang terhormat <b>Ibu Arfiana</b>, tempat dan waktu kami persilakan."<br>
+                        <span class="cue">*(Ibu Arfiana memberikan sambutan)*</span>
+                        "Terima kasih yang sebesar-besarnya kepada Ibu Arfiana. Jasa, tenaga, dan pikiran yang Ibu curahkan akan selalu menjadi fondasi berharga bagi prodi ini."
+                    </div>
+
+                    <div class="time-block">[09.00 – 09.20] SAMBUTAN PENGELOLA TAHUN 2026 – 2030</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Selanjutnya, mari kita sambut visi dan pandangan masa depan dari sosok yang akan mengemban tongkat estafet kepemimpinan ke depan. Kepada Pengelola Periode Tahun 2026 – 2030, yang terhormat <b>Ibu Esti</b>, kami persilakan."<br>
+                        <span class="cue">*(Ibu Esti memberikan sambutan)*</span>
+                        "Terima kasih kepada Ibu Esti. Selamat bertugas, kami semua siap mendukung inovasi-inovasi baru di bawah kepemimpinan Ibu."
+                    </div>
+
+                    <span class="cue">*(MC mengambil posisi sedikit rileks, tersenyum lebar untuk mencairkan suasana)*</span>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Bapak Ibu ingkang kinurmatan, sakdurunge awake dhewe mlebu marang acara inti, kersanipun mboten tegang lan suasanane tambah gayeng, kulo wonten pantun boso Jowo komedi sing pas banget nggo tahun 2026 iki:
+                        <div class="pantun">
+                            <span class="pantun-line">Dino senin lungo nang pasar bandungan,</span>
+                            <span class="pantun-line">Golek dawet malah ketemu mantan.</span>
+                            <span class="pantun-line">Kagem Bu Arfiana, matur nuwun sanget atas bimbingan,</span>
+                            <span class="pantun-line">Kagem Bu Esti, ampun kesupen traktiran nggih mantene jabatan!</span>
+                        </div>
+                        <span class="cue">*(MC tertawa kecil bersama audiens sambil memberi kode tepuk tangan)*</span>
+                        "Matur nuwun, bapak ibu! Tepuk tangan sekali lagi yang paling meriah untuk kedua pemimpin hebat kita!"
+                    </div>
+
+                    <div class="time-block">[09.20 – 09.30] SIMBOLIS SERAH TERIMA JABATAN</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Hadirin yang kami hormati, kini tibalah kita pada momen utama hari ini, yaitu prosesi <b>Simbolis Serah Terima Jabatan</b>. Kami mengundang dengan hormat Ibu Arfiana dan Ibu Esti untuk berkenan maju ke area depan. Kepada Tim yang bertugas, disilakan untuk mendampingi."<br>
+                        <span class="cue">*(Prosesi penandatanganan berita acara, penyerahan memori jabatan, dan sesi foto bersama)*</span>
+                        "Alhamdulillah, prosesi serah terima jabatan telah selesai dilaksanakan dengan lancar. Kepada Ibu Arfiana dan Ibu Esti disilakan untuk kembali ke tempat duduk."
+                    </div>
+
+                    <div class="time-block">[09.30 – 09.40] PEMBACAAN SURAT TUGAS</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Acara dilanjutkan dengan Pembacaan Surat Tugas: SOTK Periode Tahun 2026 - 2030. Sesi ini akan dibacakan secara langsung oleh <b>Ibu Siti Chunaeni</b>. Kepada Ibu Siti Chunaeni, dipersilakan."<br>
+                        <span class="cue">*(Pembacaan surat tugas oleh Ibu Siti Chunaeni)*</span>
+                        "Terima kasih kami ucapkan kepada Ibu Siti Chunaeni."
+                    </div>
+
+                    <div class="time-block">[09.40 – 09.50] PENUTUP</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Bapak, Ibu, dan seluruh civitas akademika yang berbahagia. Dengan dibacakannya surat tugas tadi, maka tuntas sudah seluruh rangkaian acara formal Serah Terima Jabatan Pengelola Program Studi Kebidanan Magelang Tahun 2026 - 2030.<br><br>
+                        Saya, Putra, selaku pembawa acara, memohon maaf yang sebesar-besarnya jika ada tutur kata yang kurang berkenan atau ada kekurangan selama memandu acara ini. Terima kasih atas perhatian dan partisipasi aktif Bapak/Ibu sekalian.<br><br>
+                        <i>Wabillahi taufiq wal hidayah,</i><br>
+                        <i>Wassalamu’alaikum Warahmatullahi Wabarakatuh.</i>"
+                    </div>
+
+                    <div class="time-block">[09.50 - 10.30 Selesai] RAMAH TAMAH</div>
+                    <div class="section-title">MC (Putra):</div>
+                    <div class="speech">
+                        "Sebagai penutup kebersamaan kita sekaligus wujud silaturahmi yang erat antara pengelola lama, pengelola baru, serta seluruh civitas akademika, kami mengundang Bapak dan Ibu sekalian untuk menikmati hidangan yang telah disediakan dalam sesi <b>Ramah Tamah</b>. Selamat menikmati, selamat bercengkerama, dan sukses selalu untuk kita semua!"
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header">
+                5. Doa (oleh Bapak Effendi) <span class="icon">+</span>
+            </button>
+            <div class="accordion-content">
+                <div class="accordion-content-inner">
+                    <div class="doa-content">
+                        <div class="meta-info">
+                            <table>
+                                <tr><td class="label">Agenda</td><td>Naskah Doa Sertijab Pengelola Prodi Kebidanan Magelang (2026 - 2030)</td></tr>
+                                <tr><td class="label">Petugas</td><td>Bapak Effendi</td></tr>
+                            </table>
+                        </div>
+
+                      <p>
+                      
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .box-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 40px;
+            background-color: #f0f2f5;
+        }
+
+        .arab-box {
+            background-color: #001f3f; /* Deep Navy Blue */
+            color: #d4af37; /* Elegant Gold */
+            padding: 40px 60px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 40pt;
+            direction: rtl;
+            font-family: 'Traditional Arabic', serif;
+            box-shadow: 0 15px 35px rgba(0, 31, 63, 0.3);
+            border: 2px solid #d4af37;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hiasan mewah minimalis */
+        .arab-box::after {
+            content: '';
+            position: absolute;
+            top: 10px; right: 10px; bottom: 10px; left: 10px;
+            border: 1px solid rgba(212, 175, 75, 0.3);
+            border-radius: 15px;
+            pointer-events: none;
+        }
+
+        .arab-box:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box-container">
+        <!-- Box 1 -->
+        <div class="arab-box">
+            بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيْمِ
+        </div>
+
+        <!-- Box 2 -->
+        <div class="arab-box">
+            السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ
+        </div>
     </div>
 
-    <script src="script.js"></script>
+</body>
+</html>
+
+</p>
+                        <p>Ya Allah, Tuhan Yang Maha Pengasih lagi Maha Penyayang, Sang Pemilik Semesta Alam. Puji dan syukur senantiasa kami panjatkan ke hadirat-Mu atas segala limpahan rahmat, hidayah, dan karunia yang tak terhingga.</p>
+                        
+                        <p>Pada hari yang penuh berkah ini, Senin, 20 Juli 2026, kami menadahkan tangan ke hadirat-Mu untuk bersyukur atas terselenggaranya acara Serah Terima Jabatan Pengelola Program Studi Kebidanan Magelang Poltekkes Kemenkes Semarang Tahun 2026 - 2030.</p>
+                        
+                        <p>Ya Allah Yang Maha Menghargai, berikanlah balasan kebaikan dan ridha-Mu atas segala dedikasi dan apresiasi kepada Pengelola Tahun 2023 - 2026, Ibu Arfiana selaku Perwakilan Jurusan Kebidanan, Ibu Nuril Nikmawati sebagai Kaprodi Sarjana Terapan, dan Arum Lusiana Sebagai Sekretaris Program Studi Kebidanan. Jadikanlah setiap peluh, pikiran, dan tenaga yang telah beliau curahkan sebagai amal ibadah yang pahalanya mengalir tanpa henti. Karuniakanlah kesehatan, kesuksesan, dan keberkahan di setiap langkah beliau selanjutnya.</p>
+                        
+                        <p>Ya Allah Yang Maha Memberi Petunjuk, kami juga memohon bimbingan-Mu untuk Ibu Esti Handayani sebagai Ketua Perwskilan Jurusan Kebidanan, Siti Rofi'ah sebagai Kaprodi Sarjana Terapan, dan Siti Chunaeni, selaku Pengelola Periode 2026 - 2030 yang baru. Seiring dengan diserahkannya amanah dan SOTK Tahun 2026 - 2030 ini, kami bermunajat agar Engkau mengaruniakan kekuatan, kebijaksanaan, dan keikhlasan hati kepada beliau. Tuntunlah langkah beliau agar senantiasa mampu membawa Program Studi Kebidanan Magelang menuju kemajuan yang semakin gemilang dan bermanfaat bagi nusa, bangsa, serta agama.</p>
+                        
+                        <p>Ya Allah Yang Maha Mempersatukan, jadikanlah momentum serah terima jabatan setelah ini sebagai wujud silaturahmi yang sejati antara pengelola lama, pengelola baru, dan seluruh civitas akademika. Eratkanlah persaudaraan kami, jauhkanlah kami dari perpecahan, dan jadikanlah kami tim yang tangguh serta solid. Engkaulah sebaik-baik pendengar doa. Kabulkanlah permohonan kami, karena hanya kepada-Mu kami berserah diri dan hanya kepada-Mu kami memohon pertolongan.</p>
+                      
+                      <p>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .doa-arab {
+            /* Ukuran font sesuai permintaan */
+            font-size: 40pt;
+            
+            /* Rata tengah */
+            text-align: center;
+            
+            /* Mengatur arah teks dari kanan ke kiri khusus Arab */
+            direction: rtl;
+            
+            /* Menggunakan font yang mendukung karakter Arab */
+            font-family: 'Traditional Arabic', 'Simplified Arabic', serif;
+            
+            /* Memberikan ruang antar baris agar tidak bertumpuk karena ukuran besar */
+            line-height: 1.8;
+            
+            /* Padding agar tidak menempel ke tepi layar */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="doa-arab">
+        رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ. سُبْحَانَ رَبِّكَ رَبِّ الْعِزَّةِ عَمَّا يَصِفُوْنَ، وَسَلَامٌ عَلَى الْمُرْسَلِيْنَ، وَالْحَمْدُ للهِ رَبِّ الْعَالَمِيْنَ
+    </div>
+
+</body>
+</html>
+</p>
+                        
+
+                        
+                        <p>Amin, Amin, Ya Rabbal 'Alamin.</p>
+                    </div>
+<p>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .box-container {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+            background-color: #f0f2f5;
+        }
+
+        .arab-box {
+            background-color: #001f3f; /* Deep Navy Blue */
+            color: #d4af37; /* Elegant Gold */
+            padding: 40px 60px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 40pt;
+            direction: rtl;
+            font-family: 'Traditional Arabic', serif;
+            box-shadow: 0 15px 35px rgba(0, 31, 63, 0.3);
+            border: 2px solid #d4af37;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hiasan mewah minimalis */
+        .arab-box::after {
+            content: '';
+            position: absolute;
+            top: 10px; right: 10px; bottom: 10px; left: 10px;
+            border: 1px solid rgba(212, 175, 75, 0.3);
+            border-radius: 15px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box-container">
+        <div class="arab-box">
+            وَالسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ
+        </div>
+    </div>
+
+</body>
+</html>
+</p>
+                </div>
+            </div>
+        </div>
+
+    </div> <footer>
+        <p>&copy; 2026 Poltekkes Kemenkes Semarang - Program Studi Kebidanan Magelang</p>
+    </footer>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const isActive = this.classList.contains('active');
+
+                // Opsi: Menutup accordion lain jika ingin mode "single open" 
+                // (Hapus blok ini jika ingin bisa buka banyak dropdown sekaligus)
+                document.querySelectorAll('.accordion-header').forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.nextElementSibling.style.maxHeight = null;
+                });
+
+                // Toggle logic
+                if (!isActive) {
+                    this.classList.add('active');
+                    // Menambahkan px dinamis sesuai tinggi konten scroll
+                    content.style.maxHeight = content.scrollHeight + 100 + "px"; 
+                }
+            });
+        });
+    });
+</script>
+
+
+<script src="https://static.app/js/static.js" type="text/javascript"></script>
 </body>
 </html>
